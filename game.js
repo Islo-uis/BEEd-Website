@@ -115,4 +115,50 @@ document.getElementById('dialogue').style.display = 'flex';
     startLevel(currentLevel);
   };
 }
+const settingsBtn = document.getElementById('settings-icon');
+const settingGui = document.getElementById('setting-gui');
+const blurTarget = document.getElementById('blur-target');
+
+settingsBtn.addEventListener('click', () => {
+  settingGui.style.display = 'flex';
+  blurTarget.classList.add('blur');
+});
+
+settingGui.addEventListener('click', (e) => {
+  if (e.target.id === 'setting-gui') {
+    settingGui.style.display = 'none';
+    blurTarget.classList.remove('blur');
+  }
+});
+
+document.getElementById('admin-login-button').addEventListener('click', () => {
+  alert('Redirecting to admin login...');
+});
+
+
+// Show the settings GUI
+document.getElementById('settings-icon').addEventListener('click', () => {
+  document.getElementById('setting-gui').style.display = 'flex';
+});
+
+// Optional: close when clicking outside button
+document.getElementById('setting-gui').addEventListener('click', (e) => {
+  if (e.target.id === 'setting-gui') {
+    document.getElementById('setting-gui').style.display = 'none';
+  }
+});
+
+// Login button click
+document.getElementById('admin-login-button').addEventListener('click', () => {
+  alert('Redirecting to admin login...');
+  // Replace with actual login logic or navigation
+});
+
+document.getElementById('back-button').addEventListener('click', () => {
+  document.getElementById('setting-gui').style.display = 'none';
+  document.getElementById('blur-target').classList.remove('blur');
+});
+
+
+
 

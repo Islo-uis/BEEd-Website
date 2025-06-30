@@ -15,6 +15,31 @@ html, body {
     position: relative;
     overflow: hidden;
   }
+
+ #settings-icon {
+  position: absolute;
+  top: 20px;
+  right: 80px; /* adjust freely */
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  object-fit: contain;
+}
+
+#sound-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px; /* adjust freely */
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  object-fit: contain;
+}
+
+
+
+
+
   
   /* Overlay that covers the whole screen */
   #overlay {
@@ -113,6 +138,104 @@ html, body {
   #indae {
     right: 40px;
   }
+
+#setting-gui {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 800px;   /* RESIZED WIDTH */
+  height: 600px;  /* RESIZED HEIGHT */
+  transform: translate(-50%, -50%);
+  background: url('Assets/icons/settings_gui.png') no-repeat center center;
+  background-size: cover;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  flex-direction: column;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+#admin-login-button {
+  margin-bottom: 100px;
+  padding: 14px 28px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#admin-login-button:hover {
+  background-color: #388e3c;
+}
+
+/* Blur effect */
+.blur {
+  filter: blur(8px);
+  transition: filter 0.3s ease;
+}
+
+/* Settings GUI (centered with custom size and background) */
+#setting-gui {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 800px;
+  height: 600px;
+  transform: translate(-50%, -50%);
+  background: url('Assets/icons/settings_gui.png') no-repeat center center;
+  background-size: cover;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  flex-direction: column;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Admin Button */
+#admin-login-button {
+  padding: 14px 28px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+#admin-login-button:hover {
+  background-color: #388e3c;
+}
+#back-button {
+  margin-top: 15px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#back-button:hover {
+  background-color: #d32f2f;
+}
+
+
+
   
   /* Responsive Adjustments */
   @media (max-width: 768px) {
