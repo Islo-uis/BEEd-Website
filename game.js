@@ -101,7 +101,9 @@ function startLevel(levelIndex) {
   difficultyOptions.style.display = 'none';
 
   // Show dialogue box and characters
-  document.getElementById('dialogue').style.display = 'flex';
+document.getElementById('level-overlay').style.display = 'flex';
+document.getElementById('dialogue').style.display = 'flex';
+
 
   overlay.onclick = null;
 
