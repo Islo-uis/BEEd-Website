@@ -1,14 +1,14 @@
 const levels = [
-  '../Assets/bg/background_palengke.png',
-  '../Assets/bg/bahay_ni_lalay_BG.png',
-  '../Assets/bg/bodega_ni_karina_BG.png',
-  '../Assets/bg/BUGASAN.png',
-  '../Assets/bg/chicken_meat_stall_BG.png',
-  '../Assets/bg/isdaan.png',
-  '../Assets/bg/fruit_stand.png'
+  'Assets/bg/background_palengke.png',
+  'Assets/bg/bahay_ni_lalay_BG.png',
+  'Assets/bg/bodega_ni_karina_BG.png',
+  'Assets/bg/BUGASAN.png',
+  'Assets/bg/chicken_meat_stall_BG.png',
+  'Assets/bg/isdaan.png',
+  'Assets/bg/fruit_stand.png'
 ];
 
-const mainTitleBG = '../Assets/bg/MAIN_TITLE_BG.png';
+const mainTitleBG = "Assets/bg/main.png"
 
 // Elements
 const container = document.getElementById('game-container');
@@ -25,14 +25,17 @@ let currentLevel = -1;
 let soundOn = true;
 
 // Initial Screen
+document.addEventListener('DOMContentLoaded', () => {
 showMainTitle();
+});
+
 
 // Button Events
 startButton.addEventListener('click', showDifficultyOptions);
 
 soundToggle.addEventListener('click', () => {
   soundOn = !soundOn;
-  soundToggle.src = soundOn ? '../Assets/icons/SOUND.png' : '../Assets/icons/MUTE.png';
+  soundToggle.src = soundOn ? 'Assets/icons/SOUND.png' : 'Assets/icons/MUTE.png';
 });
 
 easyButton.addEventListener('click', () => startGame('Easy'));
