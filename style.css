@@ -234,6 +234,31 @@ html, body {
   background-color: #d32f2f;
 }
 
+#back-to-game {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#back-to-game:hover {
+  background-color: #d32f2f;
+}
+
+.admin-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #333;           /* or whatever fits your palette */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
 
 
   

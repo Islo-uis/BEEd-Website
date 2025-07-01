@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    #game-container {
+      /* your main-game background */
+      width:100vw; height:100vh;
+      background:url('Assets/bg/main.png') center/cover no-repeat;
+      display:flex; justify-content:center; align-items:center;
+    }
+    #admin-gui {
+      width: 700px;
+      height: 700px;
+      background: url('Assets/icons/receipt.png') no-repeat center top;
+      background-size: 100% auto;
+      padding: 160px 40px 40px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+    .admin-field {
+      width: 85%;
+      margin-bottom: 20px;
+    }
+    .admin-field label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+    }
+    .admin-field select,
+    .admin-field textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    .button-group {
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+    }
+    #save-button, #back-button {
+      padding: 12px 24px;
+      font-size: 16px;
+      border:none;
+      border-radius:10px;
+      cursor:pointer;
+      width:120px;
+      color:white;
+    }
+    #save-button { background-color:#4CAF50; }
+    #save-button:hover { background-color:#388e3c; }
+    #back-button { background-color:#f44336; }
+    #back-button:hover { background-color:#d32f2f; }
+  </style>
+</head>
+<body>
+  <div id="game-container">
+
+      <div id="admin-gui">
+
+    <h2 class="admin-title">Admin Control</h2>
+
+    <div class="admin-field">
+      <label for="level">Level</label>
+      <select id="level">
+        …
+
+    <div id="admin-gui">
+      <div class="admin-field">
+        <label for="level">Level</label>
+        <select id="level">
+          <option value="">Select Level</option>
+          <option value="1">Level 1</option>
+          <!-- … through Level 7 … -->
+        </select>
+      </div>
+      <div class="admin-field">
+        <label for="difficulty">Difficulty</label>
+        <select id="difficulty">
+          <option value="">Select Difficulty</option>
+          <option>Easy</option><option>Medium</option><option>Difficult</option>
+        </select>
+      </div>
+      <div class="admin-field">
+        <label for="question">Question</label>
+        <textarea id="question" rows="4" placeholder="Enter your question here…"></textarea>
+      </div>
+      <div class="button-group">
+        <button id="save-button">Save</button>
+        <button id="back-button">Back</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ensure this isn’t still alerting!
+    document.getElementById('back-button')
+      .addEventListener('click',()=> window.location.href='index.html');
+    document.getElementById('save-button')
+      .addEventListener('click',()=>{
+        const lvl = level.value, diff = difficulty.value, q = question.value;
+        if(!lvl||!diff||!q) return alert('Please fill out all fields.');
+        console.log({lvl,diff,q});
+        alert('Question saved—check console');
+      });
+  </script>
+</body>
+</html>

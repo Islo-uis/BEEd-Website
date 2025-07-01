@@ -159,6 +159,10 @@ document.getElementById('back-button').addEventListener('click', () => {
   document.getElementById('blur-target').classList.remove('blur');
 });
 
+document.getElementById('admin-login-button').addEventListener('click', () => {
+  window.location.href = 'admin.html'; // Navigate to admin page
+});
+
 
 
 
