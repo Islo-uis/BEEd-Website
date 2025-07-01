@@ -5,97 +5,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Panel</title>
-    <link rel="stylesheet" href="style.css" />
       <script src="
 https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.all.min.js
 "></script>
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <style>
-        #game-container {
-            width: 100vw;
-            height: 100vh;
-            background: url('Assets/bg/main.png') center/cover no-repeat;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #admin-gui {
-            width: 700px;
-            height: 700px;
-            background: url('Assets/icons/receipt.png') no-repeat center top;
-            background-size: 100% auto;
-            padding: 160px 40px 40px;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border-radius: 20px;
-            box-shadow: none;
-        }
-
-        #adminn {
-            width: 500px;
-        }
-
-        .admin-title {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        .admin-field {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-
-        .admin-field label {
-            font-weight: bold;
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        .admin-field input {
-            width: 100%;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-            box-sizing: border-box;
-        }
-
-        .button-group {
-            margin-top: 20px;
-            display: flex;
-            gap: 20px;
-        }
-
-        #save-button,
-        #back-button {
-            padding: 12px 24px;
-            font-size: 16px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            width: 120px;
-            color: white;
-        }
-
-        #save-button {
-            background-color: #4CAF50;
-        }
-
-        #save-button:hover {
-            background-color: #388e3c;
-        }
-
-        #back-button {
-            background-color: #f44336;
-        }
-
-        #back-button:hover {
-            background-color: #d32f2f;
-        }
-    </style>
+    <link rel="stylesheet" href="admin.css" />
+        <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -155,7 +70,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.all.min.js
                         } else {
                             Swal.fire("Login Success!", "", "success").then((result) => {
                                 if (result.isConfirmed) {
-                                    window.location.href = "admin.html";
+                                    window.location.href = "admin/admin.html";
                                 }
                             });
                             return false;

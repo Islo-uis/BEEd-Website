@@ -39,7 +39,8 @@ $question = "CREATE TABLE IF NOT EXISTS questionTable (
     choice3 TEXT NOT NULL,
     choice4 TEXT NOT NULL,
     correctAnswer VARCHAR(2),
-    difficulty INT NOT NULL
+    difficulty INT NOT NULL,
+    levell INT NOT NULL
 )";
 
 
@@ -47,6 +48,7 @@ if (mysqli_query($conn, $question)) {
 } else {
     echo "Error creating table: " . mysqli_error($conn);
 }
+
 
 
 //CREAATEEE LOGSSS TIBOOL

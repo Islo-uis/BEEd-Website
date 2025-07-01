@@ -1,0 +1,57 @@
+#game-container {
+      /* your main-game background */
+      width:100vw; height:100vh;
+      background:url('../Assets/bg/main.png') center/cover no-repeat;
+      display:flex; justify-content:center; align-items:center;
+    }
+    #admin-gui {
+      width: 1000px;
+      height: 1000px;
+      background: url('../Assets/icons/receipt.png') no-repeat center top;
+      background-size: 100% auto;
+      padding: 150px 40px 40px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 20px;
+      box-shadow: none;
+    }
+    #adminn{
+      width: 70%;
+    }
+    .admin-field {
+      width: 85%;
+      margin-bottom: 20px;
+    }
+    .admin-field label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+    }
+    .admin-field select,
+    .admin-field textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    .button-group {
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+    }
+    #save-button, #back-button {
+      padding: 12px 24px;
+      font-size: 16px;
+      border:none;
+      border-radius:10px;
+      cursor:pointer;
+      width:120px;
+      color:white;
+    }
+    #save-button { background-color:#4CAF50; }
+    #save-button:hover { background-color:#388e3c; }
+    #back-button { background-color:#f44336; }
+    #back-button:hover { background-color:#d32f2f; }
