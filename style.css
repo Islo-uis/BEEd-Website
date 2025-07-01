@@ -154,7 +154,7 @@ html, body {
   z-index: 999;
   flex-direction: column;
   border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: none;
 }
 
 
@@ -197,7 +197,7 @@ html, body {
   z-index: 999;
   flex-direction: column;
   border-radius: 15px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  box-shadow: none;
 }
 
 /* Admin Button */
@@ -217,23 +217,6 @@ html, body {
 #admin-login-button:hover {
   background-color: #388e3c;
 }
-#back-button {
-  margin-top: 15px;
-  padding: 12px 24px;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  background-color: #f44336;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#back-button:hover {
-  background-color: #d32f2f;
-}
-
 #back-to-game {
   margin-top: 20px;
   padding: 12px 24px;

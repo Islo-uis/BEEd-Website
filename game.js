@@ -26,7 +26,7 @@ let soundOn = true;
 
 // Initial Screen
 document.addEventListener('DOMContentLoaded', () => {
-showMainTitle();
+  showMainTitle();
 });
 
 
@@ -72,14 +72,42 @@ function startGame(difficulty) {
   console.log(`Selected difficulty: ${difficulty}`);
   currentLevel = 0;
 
-  // Hide overlay before showing first level
-  overlay.style.display = 'none';
-  difficultyOptions.style.display = 'none';
 
-  // Small delay to ensure overlay click doesn't trigger immediately
-  setTimeout(() => {
-    startLevel(currentLevel);
-  }, 300); // adjust if needed
+
+  $.ajax({
+    type: "POST",
+    url: "ajax.php?action=getLevel",
+    data: {
+      difficulty: difficulty
+    },
+    dataType: 'json',
+    success: function (response) {
+      var count = parseInt(response.count);
+      if (count > 0) {
+          // Hide overlay before showing first level
+        overlay.style.display = 'none';
+        difficultyOptions.style.display = 'none';
+       // Small delay to ensure overlay click doesn't trigger immediately
+          setTimeout(() => {
+            startLevel(currentLevel);
+          }, 300); // adjust if needed
+      } else {
+
+        Swal.fire({
+          icon: "error",
+          title: "Stay Tuned!",
+          text: "There are currently no levels on this difficulty!"
+        });
+        return false;
+      }
+    },
+    error: function (xhr, status, error) {
+      console.error("An error occurred: " + error);
+      console.log("Response text: " + xhr.responseText);
+    }
+  });
+
+  
 }
 
 function startLevel(levelIndex) {
@@ -101,8 +129,8 @@ function startLevel(levelIndex) {
   difficultyOptions.style.display = 'none';
 
   // Show dialogue box and characters
-document.getElementById('level-overlay').style.display = 'flex';
-document.getElementById('dialogue').style.display = 'flex';
+  document.getElementById('level-overlay').style.display = 'flex';
+  document.getElementById('dialogue').style.display = 'flex';
 
 
   overlay.onclick = null;
@@ -131,10 +159,6 @@ settingGui.addEventListener('click', (e) => {
   }
 });
 
-document.getElementById('admin-login-button').addEventListener('click', () => {
-  alert('Redirecting to admin login...');
-});
-
 
 // Show the settings GUI
 document.getElementById('settings-icon').addEventListener('click', () => {
@@ -150,8 +174,7 @@ document.getElementById('setting-gui').addEventListener('click', (e) => {
 
 // Login button click
 document.getElementById('admin-login-button').addEventListener('click', () => {
-  alert('Redirecting to admin login...');
-  // Replace with actual login logic or navigation
+  window.location.href = 'adminLogin.php';
 });
 
 document.getElementById('back-button').addEventListener('click', () => {
@@ -159,9 +182,6 @@ document.getElementById('back-button').addEventListener('click', () => {
   document.getElementById('blur-target').classList.remove('blur');
 });
 
-document.getElementById('admin-login-button').addEventListener('click', () => {
-  window.location.href = 'admin.html'; // Navigate to admin page
-});
 
 
 
