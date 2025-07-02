@@ -1,6 +1,7 @@
 $(document).ready(function () {
     $("#difficultySelect").change(function () {
         loadLevels();
+        changeLevel();
     })
 
     $("#levelSelect").change(function () {
@@ -38,7 +39,7 @@ $(document).ready(function () {
                 if (result.isConfirmed) {
                     var url = "ajax.php?action=addQuestion";
                     var confirm = "Question Added!";
-                    if (level != 8) {
+                    if (level != 0) {
                         url = "ajax.php?action=editQuestion";
                         confirm = "Question Edited!";
                     }
@@ -151,7 +152,15 @@ function changeLevel() {
         });
     }
     else {
-
+        document.getElementById("question").value = "";
+        document.getElementById("choice1").value = "";
+        document.getElementById("choice2").value = "";
+        document.getElementById("choice3").value = "";
+        document.getElementById("choice4").value = "";
+        document.getElementById("choice1c").checked = false;
+        document.getElementById("choice2c").checked = false;
+        document.getElementById("choice3c").checked = false;
+        document.getElementById("choice4c").checked = false;
     }
 }
 

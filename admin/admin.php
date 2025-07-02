@@ -88,7 +88,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.all.min.js
         </div>
         <div class="button-group">
           <button id="save-button">Save</button>
-          <button id="back-button">Back</button>
+          <button id="back-button">Logout</button>
         </div>
       </div>
 
@@ -97,7 +97,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.all.min.js
     <script>
       // ensure this isn’t still alerting!
       document.getElementById('back-button')
-        .addEventListener('click', () => window.location.href = 'index.html');
+        .addEventListener('click', () => window.location.href = '../index.php');
     </script>
     <script src="admin.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

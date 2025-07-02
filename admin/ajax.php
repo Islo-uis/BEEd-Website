@@ -1,5 +1,5 @@
 <?php
-include "../db.php";
+include "../game/db.php";
 
 
 if ($_GET['action'] == "getLevels") {
@@ -56,7 +56,7 @@ if ($_GET['action'] == "addQuestion") {
     $levell = 0;
     if (mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_assoc($result)) {
-            $level = (int)$row['levell'];
+            $levell = (int)$row['levell'];
         }
     }
     $lastLevel = $levell + 1;
@@ -109,4 +109,32 @@ if ($_GET['action'] == "getLevelDetails") {
         "difficulty" => $difficulty, 
         "level" => $level, 
     ]);
+}
+
+
+if ($_GET['action'] == "editQuestion") {
+
+    header('Content-Type: application/json');
+    $conn = mysqli_connect($db_server, $db_user, $db_pass, $db_name);
+
+    if (!$conn) {
+        die(json_encode(["error" => "Connection failed: " . mysqli_connect_error()]));
+    }
+
+    $difficulty = $_POST['difficulty'];
+    $level = $_POST['level'];
+    $question = $_POST['question'];
+    $choice1 = $_POST['choice1'];
+    $choice2 = $_POST['choice2'];
+    $choice3 = $_POST['choice3'];
+    $choice4 = $_POST['choice4'];
+    $correct = $_POST['correct'];
+
+    $stmt = $conn->prepare("UPDATE questiontable set question = ?, choice1 = ?, choice2 = ?, choice3 = ?, choice4 = ?, correctAnswer = ? where questionID = ?");
+    $stmt->bind_param("sssssii", $question, $choice1, $choice2, $choice3, $choice4, $correct, $level);
+    $stmt->execute();
+    $stmt->close();
+
+    mysqli_close($conn);
+    echo json_encode($level);
 }

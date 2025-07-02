@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Level 1 UI</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      font-family: sans-serif;
+      color: #fff;
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Header */
+    .header {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    /* Choices Grid */
+    .choices-grid {
+      position: absolute;
+      top: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+    }
+    .choice {
+      position: relative;
+    }
+    .choice img {
+      width: 50%;
+      display: block;
+    }
+    .choice .choice-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 90%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #000;
+      line-height: 1.3;
+      font-size: 0.9rem;
+    }
+
+    /* Characters */
+    .character {
+      position: absolute;
+      bottom: 150px;
+      width: 150px;
+    }
+    .character.left {
+      left: 40px;
+    }
+    .character.right {
+      right: 40px;
+    }
+
+    /* Dialogue Box */
+    .dialogue-container {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      max-width: 1200px;
+    }
+    .dialogue-container img {
+      width: 100%;
+      display: block;
+    }
+    .dialogue-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 90%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #fff;
+      line-height: 1.4;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Level Title -->
+  <div class="header">Level 1</div>
+
+  <!-- Choices -->
+  <div class="choices-grid">
+    <div class="choice">
+      <img src="WOODEN BOARD.png" alt="Choice background">
+      <div class="choice-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac metus vulputate, faucibus dui id, commodo est.
+      </div>
+    </div>
+    <div class="choice">
+      <img src="WOODEN BOARD.png" alt="Choice background">
+      <div class="choice-text">
+        Etiam eget efficitur sem. In et maximus tortor, vitae dapibus lorem. Nulla sed tristique felis.
+      </div>
+    </div>
+    <div class="choice">
+      <img src="WOODEN BOARD.png" alt="Choice background">
+      <div class="choice-text">
+        Vel mattis leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </div>
+    </div>
+    <div class="choice">
+      <img src="WOODEN BOARD.png" alt="Choice background">
+      <div class="choice-text">
+        Integer tincidunt, dolor sed imperdiet varius, arcu justo interdum neque.
+      </div>
+    </div>
+  </div>
+
+  <!-- Characters -->
+  <img src="indae.png" alt="Girl character" class="character left" />
+  <img src="dong.png"  alt="Boy character"  class="character right"/>
+
+  <!-- Dialogue Box -->
+  <div class="dialogue-container">
+    <img src="dialogue_box.png" alt="Dialogue box background">
+    <div class="dialogue-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac metus vulputate, faucibus dui id, commodo est. Etiam eget efficitur sem. In et maximus tortor, vitae dapibus lorem. Nulla sed tristique felis, vel mattis leo. Integer tincidunt, dolor sed imperdiet varius, arcu justo interdum neque, vitae ullamcorper erat elit sit amet mi. Nam scelerisque tempor viverra. Suspendisse potenti.
+    </div>
+  </div>
+
+</body>
+</html>

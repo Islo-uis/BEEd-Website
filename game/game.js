@@ -16,10 +16,12 @@ const overlay = document.getElementById('overlay');
 const startButton = document.getElementById('start-button');
 const soundToggle = document.getElementById('sound-toggle');
 const title = document.getElementById('title');
+const level = document.getElementById('levell');
 const difficultyOptions = document.getElementById('difficulty-options');
 const easyButton = document.getElementById('easy-button');
 const mediumButton = document.getElementById('medium-button');
 const hardButton = document.getElementById('hard-button');
+var difficulty = 0;
 
 let currentLevel = -1;
 let soundOn = true;
@@ -46,6 +48,7 @@ hardButton.addEventListener('click', () => startGame('Hard'));
 function showMainTitle() {
   container.style.backgroundImage = `url('${mainTitleBG}')`;
   overlay.style.display = 'flex';
+  title.style.display = 'flex'
   title.textContent = 'Palengke Adventure';
 
   startButton.style.display = 'inline-block';
@@ -68,15 +71,23 @@ function showDifficultyOptions() {
   overlay.onclick = null;
 }
 
-function startGame(difficulty) {
-  console.log(`Selected difficulty: ${difficulty}`);
+function startGame(diff) {
+  console.log(`Selected difficulty: ${diff}`);
   currentLevel = 0;
-
+  if (diff == "Easy"){
+    difficulty = 1;
+  }
+  else if (diff == "Medium"){
+    difficulty = 2;
+  }
+  else if (diff == "Hard"){
+    difficulty = 3;
+  }
 
 
   $.ajax({
     type: "POST",
-    url: "ajax.php?action=getLevel",
+    url: "game/ajax.php?action=getLevel",
     data: {
       difficulty: difficulty
     },
@@ -121,7 +132,8 @@ function startLevel(levelIndex) {
   container.style.backgroundImage = `url('${levels[levelIndex]}')`;
 
   overlay.style.display = 'flex';
-  title.textContent = `Level ${levelIndex + 1}`;
+  title.style.display = 'none';
+  level.textContent = `Level ${levelIndex + 1}`;
 
   // Hide other UI
   startButton.style.display = 'none';
@@ -130,7 +142,9 @@ function startLevel(levelIndex) {
 
   // Show dialogue box and characters
   document.getElementById('level-overlay').style.display = 'flex';
-  document.getElementById('dialogue').style.display = 'flex';
+   const dialogueBox = document.getElementById('dialogue');
+  dialogueBox.style.display = 'flex';
+  
 
 
   overlay.onclick = null;

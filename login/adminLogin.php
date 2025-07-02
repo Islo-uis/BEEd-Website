@@ -10,7 +10,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.all.min.js
 "></script>
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="admin.css" />
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="../game/style.css" />
 </head>
 
 <body>
@@ -53,7 +53,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.all.min.js
             } else {
                 $.ajax({
                     type: "POST",
-                    url: "ajax.php?action=getCreds",
+                    url: "../game/ajax.php?action=getCreds",
                     data: {
                         username: username,
                         password: password
@@ -70,7 +70,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.all.min.js
                         } else {
                             Swal.fire("Login Success!", "", "success").then((result) => {
                                 if (result.isConfirmed) {
-                                    window.location.href = "admin/admin.html";
+                                    window.location.href = "admin/admin.php";
                                 }
                             });
                             return false;
